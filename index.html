@@ -169,16 +169,42 @@
   </header>
 
   <main id="contenu">
-        <section class="hero" id="accueil">
-      <div class="hero-media">
             <section class="hero" id="accueil">
       <div class="hero-media">
         <img src="hero.jpg.jpg" alt="Un rêve un voyage" />
       </div>
       <div class="hero-overlay"></div>
-    </section>
+      
+      <!-- Badge Travel planner en haut à gauche -->
+      <div style="position:absolute;top:100px;left:60px;z-index:3;display:flex;align-items:center;gap:8px;">
+        <div style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);border-radius:50px;padding:8px 16px;">
+          <!-- Mini rose des vents -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d4a853" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="2" x2="12" y2="22"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
+            <line x1="4.93" y1="19.07" x2="19.07" y2="4.93"/>
+          </svg>
+          <span style="color:#d4a853;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;">Travel planner</span>
+        </div>
       </div>
-      <div class="hero-overlay"></div>
+
+      <!-- Logo Un rêve un voyage en haut à droite -->
+      <div style="position:absolute;top:100px;right:60px;z-index:3;text-align:right;">
+        <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.5rem,3vw,2rem);color:#d4a853;font-weight:600;">Un rêve un voyage</span>
+      </div>
+
+      <!-- Citation en bas -->
+      <div style="position:absolute;bottom:80px;left:60px;z-index:3;max-width:650px;">
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.3rem,2.5vw,2rem);color:rgba(255,255,255,0.9);font-style:italic;line-height:1.4;margin-bottom:15px;">
+          "Entre le rêve que l'on vise et le voyage que l'on imagine, il n'y a que vous... et le plan sur mesure qui le rend réel."
+        </p>
+        <div style="display:flex;align-items:center;gap:15px;">
+          <span style="background:#d4a853;color:#1a1a1a;padding:4px 12px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;">Sur mesure</span>
+        </div>
+        <p style="color:rgba(255,255,255,0.5);font-size:11px;margin-top:10px;letter-spacing:1px;text-transform:uppercase;">Création de voyages personnalisés</p>
+      </div>
     </section>
     
     <section class="section surface" id="offres">
