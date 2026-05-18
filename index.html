@@ -29,7 +29,6 @@
       --color-bg:#151311;--color-surface:#1d1a17;--color-surface-2:#26221e;--color-surface-offset:#2d2823;--color-border:#3c342d;--color-divider:#352f29;
       --color-text:#f0e7dc;--color-text-muted:#beb2a4;--color-text-faint:#84786c;--color-text-inverse:#161311;
       --color-primary:#c6a77b;--color-primary-hover:#dbbc91;--color-primary-soft:#3a3128;--color-secondary:#5eaeb1;
-      --shadow-sm:0 1px 2px rgba(0,0,0,.2);--shadow-md:0 12px 30px rgba(0,0,0,.28);--shadow-lg:0 24px 60px rgba(0,0,0,.36);
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{-webkit-text-size-adjust:none;text-size-adjust:none;scroll-behavior:smooth;scroll-padding-top:5rem}
@@ -44,7 +43,15 @@
     .site-header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--color-bg) 82%, transparent);backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in srgb,var(--color-text) 10%, transparent)}
     .header-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:1.2rem 0}
     .brand{display:flex;align-items:center;gap:.85rem;font-size:var(--text-sm);font-weight:700;letter-spacing:.02em}
-    .brand-mark{width:56px;height:56px;padding:4px;border-radius:16px;background:var(--color-surface-2);color:var(--color-primary);box-shadow:var(--shadow-sm)}
+    
+    /* MODIFICATION : Ajustement de la boîte du logo pour s'adapter au format large */
+    .brand-mark{
+      width: 140px; /* Plus large pour que toute la carte du monde rentre */
+      height: 48px; /* Hauteur harmonieuse pour la barre de navigation */
+      padding: 2px;
+      display: block;
+    }
+    
     .nav-links{display:flex;align-items:center;gap:1.25rem;list-style:none}
     .nav-links a{font-size:var(--text-sm);color:var(--color-text-muted)}
     .nav-links a:hover{color:var(--color-text)}
@@ -124,8 +131,8 @@
       h1{max-width:11ch}
     }
     @media (max-width:640px){
-  .hero{min-height:88svh}
-  .hero-media img{object-fit:contain;background-color:#f6f3ee}
+      .hero{min-height:88svh}
+      .hero-media img{object-fit:contain;background-color:#f6f3ee}
       .hero-inner{padding-top:6.5rem}
       .hero-actions{flex-direction:column;align-items:stretch}
       .hero-actions .btn{width:100%}
@@ -139,43 +146,30 @@
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
-    <header class="site-header">
+  <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#accueil" aria-label="Un rêve un voyage accueil">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="100%" height="auto">
-  <!-- Définitions pour les styles globaux -->
-  <defs>
-    <style>
-      .carte-monde { fill: #0abab5; } /* Couleur Bleu Tiffany */
-      .trajectoire { fill: none; stroke: #1a1a1a; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
-      .trajectoire-pointilles { fill: none; stroke: #1a1a1a; stroke-width: 4; stroke-dasharray: 1, 12; stroke-linecap: round; }
-      .avion { fill: #1a1a1a; }
-    </style>
-  </defs>
-
-  <!-- Exemple simplifié de la carte du monde en fond (Bleu Tiffany) -->
-  <g class="carte-monde">
-    <!-- [Note : Les données complexes des continents (path d="...") se placent ici] -->
-    <!-- Amérique du Nord & Sud -->
-    <path d="M150,120 Q120,150 140,200 T180,280 T210,380 Q220,420 215,450 Q230,400 240,320 T260,220 Q290,180 250,130 Z" />
-    <!-- Eurasie & Afrique -->
-    <path d="M450,150 Q400,180 430,250 T480,350 Q500,430 520,450 Q540,380 530,300 T620,200 Q700,120 650,100 Z" />
-    <!-- Australie -->
-    <path d="M720,350 Q750,330 790,360 T760,400 Q710,390 720,350 Z" />
-  </g>
-
-  <!-- Tracé de l'avion (Ligne noire avec boucle en cœur) -->
-  <!-- Début en pointillés à gauche -->
-  <path class="trajectoire-pointilles" d="M 80,240 C 110,240 140,235 170,230" />
-  
-  <!-- Ligne continue qui forme le cœur au centre -->
-  <path class="trajectoire" d="M 170,230 C 250,210 320,310 400,310 C 450,310 500,240 500,190 C 500,140 440,130 410,180 C 380,130 320,140 320,190 C 320,240 370,310 420,310 C 530,310 650,220 800,180" />
-
-  <!-- Silhouette noire de l'avion au bout de la ligne -->
-  <g class="avion" transform="translate(795, 178) rotate(-15)">
-    <path d="M-15,-5 L-5,-5 L5,-18 L12,-18 L7,-5 L22,-5 L25,-10 L29,-10 L27,-3 L27,3 L29,10 L25,10 L22,5 L7,5 L12,18 L5,18 L-5,5 L-15,5 L-18,0 Z" />
-  </g>
-</svg>
+        
+        <!-- INTEGRATION DIRECTE DU NOUVEAU LOGO OPTIMISÉ POUR NAVBAR -->
+        <svg class="brand-mark" viewBox="0 0 1000 350" xmlns="http://www.w3.org/2000/svg">
+          <!-- Carte du monde intégrée (Couleur Bleu Tiffany de la charte graphique #81c8c2) -->
+          <g fill="#81c8c2">
+            <!-- Amérique du Nord et du Sud -->
+            <path d="M150,80 Q120,110 140,160 T180,240 T210,320 Q220,340 215,350 Q230,320 240,260 T260,180 Q290,140 250,90 Z" />
+            <!-- Europe, Asie et Afrique -->
+            <path d="M450,110 Q400,130 430,190 T480,270 Q500,310 520,330 Q540,290 530,230 T620,150 Q700,80 650,70 Z" />
+            <!-- Australie -->
+            <path d="M720,260 Q750,245 790,270 T760,310 Q710,300 720,260 Z" />
+          </g>
+          <!-- Tracé de l'avion avec le cœur (Noir discret #28231c pour correspondre à la couleur de vos textes) -->
+          <path d="M 80,180 C 110,180 140,175 170,170" fill="none" stroke="#28231c" stroke-width="8" stroke-dasharray="2, 20" stroke-linecap="round" />
+          <path d="M 170,170 C 250,150 320,250 400,250 C 450,250 500,180 500,130 C 500,80 440,70 410,120 C 380,70 320,80 320,130 C 320,180 370,250 420,250 C 530,250 650,160 800,130" fill="none" stroke="#28231c" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- Silhouette noire de l'avion au bout de la ligne -->
+          <g fill="#28231c" transform="translate(795, 128) rotate(-12)">
+            <path d="M-25,-8 L-8,-8 L8,-30 L20,-30 L12,-8 L36,-8 L40,-16 L48,-16 L44,-4 L44,4 L48,16 L40,16 L36,8 L12,8 L20,30 L8,30 L-8,8 L-25,8 L-30,0 Z" />
+          </g>
+        </svg>
+        
         <span>Un rêve un voyage</span>
       </a>
       <nav aria-label="Navigation principale">
@@ -196,14 +190,12 @@
       </div>
     </div>
   </header>
-
   <main id="contenu">
     <section class="hero" id="accueil">
       <div class="hero-media">
         <img src="hero.jpg4.jpg" alt="Un rêve un voyage" />
       </div>
     </section>
-
     <section class="section surface" id="offres">
       <div class="container">
         <div class="section-head reveal">
@@ -250,7 +242,6 @@
         </div>
       </div>
     </section>
-
     <section class="section" id="detail-offres">
       <div class="container story-grid">
         <article class="story-panel large reveal">
@@ -265,7 +256,6 @@
         </article>
       </div>
     </section>
-
     <section class="section surface">
       <div class="container detail-stack">
         <article class="detail-card reveal" id="offre-decouverte">
@@ -304,7 +294,6 @@
             <a class="btn btn-primary" href="#contact">Choisir Découverte</a>
           </div>
         </article>
-
         <article class="detail-card reveal" id="offre-signature">
           <header>
             <div>
@@ -341,7 +330,6 @@
             <a class="btn btn-primary" href="#contact">Choisir Signature</a>
           </div>
         </article>
-
         <article class="detail-card reveal" id="offre-premium">
           <header>
             <div>
@@ -380,7 +368,6 @@
         </article>
       </div>
     </section>
-
     <section class="section" id="options">
       <div class="container">
         <div class="section-head reveal">
@@ -411,7 +398,7 @@
           <article class="offer-card reveal">
             <span class="badge">Sur mesure</span>
             <h3>Projet spécial</h3>
-            <p>Pour une demande très particulière ou un voyage plus complexe.</p>
+            <p>Pour une demande très particulière ou un voyage mais complexe.</p>
             <ul class="offer-list" role="list">
               <li>Voyage multi-étapes plus poussé.</li>
               <li>Recherche approfondie et variantes.</li>
@@ -421,7 +408,6 @@
         </div>
       </div>
     </section>
-
     <section class="section" id="methode">
       <div class="container">
         <div class="section-head reveal">
@@ -434,7 +420,6 @@
         </div>
       </div>
     </section>
-
     <section class="section surface" id="contact">
       <div class="container cta-wrap">
         <article class="contact-card reveal">
@@ -471,9 +456,7 @@
             <h3 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:0.5rem;">Par téléphone</h3>
             <p style="color:var(--color-text-muted);font-size:1.1rem;margin-bottom:12px;">Je suis disponible pour échanger sur votre projet.</p>
             <p style="color:var(--color-text-muted);font-size:1.05rem;margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:8px;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              Je suis joignable via WhatsApp
-            </p>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Je suis joignable via WhatsApp </p>
             <a href="tel:+33000000000" class="btn btn-primary" style="padding:12px 24px;font-size:14px;">M'appeler</a>
           </div>
           <div>
@@ -494,11 +477,9 @@
       </div>
     </section>
   </main>
-
   <footer class="footer">
     <div class="container">Un rêve un voyage — Travel planner sur mesure</div>
   </footer>
-
   <script>
     (() => {
       const root = document.documentElement;
