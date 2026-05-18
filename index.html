@@ -44,11 +44,10 @@
     .header-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:1.2rem 0}
     .brand{display:flex;align-items:center;gap:.85rem;font-size:var(--text-sm);font-weight:700;letter-spacing:.02em}
     
-    /* MODIFICATION : Ajustement de la boîte du logo pour s'adapter au format large */
+    /* OPTIMISATION NAVBAR : Espace élargi pour la carte du monde complète */
     .brand-mark{
-      width: 140px; /* Plus large pour que toute la carte du monde rentre */
-      height: 48px; /* Hauteur harmonieuse pour la barre de navigation */
-      padding: 2px;
+      width: 160px; 
+      height: 52px; 
       display: block;
     }
     
@@ -150,23 +149,29 @@
     <div class="container header-inner">
       <a class="brand" href="#accueil" aria-label="Un rêve un voyage accueil">
         
-        <!-- INTEGRATION DIRECTE DU NOUVEAU LOGO OPTIMISÉ POUR NAVBAR -->
-        <svg class="brand-mark" viewBox="0 0 1000 350" xmlns="http://www.w3.org/2000/svg">
-          <!-- Carte du monde intégrée (Couleur Bleu Tiffany de la charte graphique #81c8c2) -->
-          <g fill="#81c8c2">
-            <!-- Amérique du Nord et du Sud -->
-            <path d="M150,80 Q120,110 140,160 T180,240 T210,320 Q220,340 215,350 Q230,320 240,260 T260,180 Q290,140 250,90 Z" />
-            <!-- Europe, Asie et Afrique -->
-            <path d="M450,110 Q400,130 430,190 T480,270 Q500,310 520,330 Q540,290 530,230 T620,150 Q700,80 650,70 Z" />
+        <!-- LOGO ENTIÈREMENT RECADRÉ ET AVION TOURNÉ VERS LA DROITE -->
+        <svg class="brand-mark" viewBox="0 0 1100 400" xmlns="http://www.w3.org/2000/svg">
+          <!-- Carte du monde repositionnée pour être 100% visible (Bleu Tiffany #81c8c2) -->
+          <g fill="#81c8c2" opacity="0.85">
+            <!-- Amérique du Nord & Sud -->
+            <path d="M180,90 Q140,120 160,180 T200,270 T230,360 Q240,380 235,390 Q255,360 265,290 T290,200 Q320,150 280,100 Z" />
+            <!-- Europe & Afrique -->
+            <path d="M490,130 Q440,150 470,220 T520,310 Q540,360 560,380 Q580,330 570,260 T670,170 Q760,90 700,80 Z" />
+            <!-- Asie -->
+            <path d="M680,100 Q740,70 820,110 T890,180 T840,240 Q760,260 720,200 Z" />
             <!-- Australie -->
-            <path d="M720,260 Q750,245 790,270 T760,310 Q710,300 720,260 Z" />
+            <path d="M850,290 Q890,270 930,300 T890,350 Q830,340 850,290 Z" />
           </g>
-          <!-- Tracé de l'avion avec le cœur (Noir discret #28231c pour correspondre à la couleur de vos textes) -->
-          <path d="M 80,180 C 110,180 140,175 170,170" fill="none" stroke="#28231c" stroke-width="8" stroke-dasharray="2, 20" stroke-linecap="round" />
-          <path d="M 170,170 C 250,150 320,250 400,250 C 450,250 500,180 500,130 C 500,80 440,70 410,120 C 380,70 320,80 320,130 C 320,180 370,250 420,250 C 530,250 650,160 800,130" fill="none" stroke="#28231c" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
-          <!-- Silhouette noire de l'avion au bout de la ligne -->
-          <g fill="#28231c" transform="translate(795, 128) rotate(-12)">
-            <path d="M-25,-8 L-8,-8 L8,-30 L20,-30 L12,-8 L36,-8 L40,-16 L48,-16 L44,-4 L44,4 L48,16 L40,16 L36,8 L12,8 L20,30 L8,30 L-8,8 L-25,8 L-30,0 Z" />
+          
+          <!-- Tracé de la ligne en pointillés (Noir discret #28231c) -->
+          <path d="M 100,210 C 140,210 180,200 220,190" fill="none" stroke="#28231c" stroke-width="8" stroke-dasharray="2, 22" stroke-linecap="round" />
+          <!-- Le fameux tracé en cœur, voyageant de gauche à droite -->
+          <path d="M 220,190 C 310,170 380,290 470,290 C 530,290 580,210 580,150 C 580,90 520,80 490,140 C 450,80 380,90 380,150 C 380,210 440,290 500,290 C 620,290 750,190 920,150" fill="none" stroke="#28231c" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+          
+          <!-- L'AVION RETOURNÉ : Il pointe désormais vers le haut-droite (direction de l'envol vers le site) -->
+          <g fill="#28231c" transform="translate(925, 145) rotate(15)">
+            <!-- Dessin géométrique d'un avion dirigé vers la droite (le nez à droite, la queue à gauche) -->
+            <path d="M25,0 L8,8 L8,25 L-4,25 L0,8 L-16,8 L-20,14 L-26,14 L-23,4 L-23,-4 L-26,-14 L-20,-14 L-16,-8 L0,-8 L-4,-25 L8,-25 L8,-8 Z" />
           </g>
         </svg>
         
